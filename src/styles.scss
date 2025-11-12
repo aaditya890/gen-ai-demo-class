@@ -3,5 +3,41 @@
 @tailwind utilities;
 
 body {
-   font-family: "Capriola", sans-serif;
+  font-family: "Capriola", sans-serif;
+}
+
+/* 🌌 Refined AI Gradient (Darker, less white) */
+@layer base {
+  :root {
+    --ai-gradient-start: #06070a; /* near black */
+    --ai-gradient-mid: #0d183d;   /* deep bluish tone */
+    --ai-gradient-end: #1d0d49;   /* dark violet edge */
+    --text-content: #ffffff;
+    --highlight-yellow: #ffd300;
+    --highlight-blue: #007bff;
+  }
+}
+
+@layer utilities {
+  /* Gradient background with smooth fade */
+  .bg-ai-gradient {
+    background: linear-gradient(
+      145deg,
+      var(--ai-gradient-start) 0%,
+      var(--ai-gradient-mid) 45%,
+      var(--ai-gradient-end) 100%
+    );
+  }
+
+  .text-highlight-yellow {
+    color: var(--highlight-yellow);
+  }
+
+  .text-highlight-blue {
+    color: var(--highlight-blue);
+  }
+
+  .text-content {
+    color: var(--text-content);
+  }
 }

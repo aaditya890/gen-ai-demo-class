@@ -1,0 +1,24 @@
+<!-- ========== WHAT YOU'LL LEARN / MODULES ========== -->
+<section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-100 px-4 py-10">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-xl font-bold text-yellow-400 text-center">Course Modules (Highlights)</h2>
+
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div *ngFor="let m of modules" class="p-4 rounded-lg bg-black/30 border border-gray-700">
+        <h3 class="font-semibold text-white">{{ m.title }}</h3>
+        <p class="text-xs text-gray-300 mt-1">{{ m.points }}</p>
+      </div>
+    </div>
+
+    <!-- outcomes -->
+    <div class="mt-8 p-4 rounded-lg bg-black/30 border border-gray-700">
+      <h3 class="font-semibold text-white">Outcomes</h3>
+      <ul class="mt-2 text-sm text-gray-300 list-disc list-inside space-y-1">
+        <li>Set up campaigns across Google & Meta with proper tracking.</li>
+        <li>SEO basics to rank local pages; content & on-page workflow.</li>
+        <li>Build a simple landing page & connect analytics.</li>
+        <li>Create a personal portfolio / client-ready case study.</li>
+      </ul>
+    </div>
+  </div>
+</section>

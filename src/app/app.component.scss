@@ -1,0 +1,7 @@
+/* Additional custom styles if needed */
+:host ::ng-deep {
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}

@@ -6,12 +6,12 @@ body {
   font-family: "Capriola", sans-serif;
 }
 
-/* 🌌 Refined AI Gradient (Darker, less white) */
+/* 🌌 Refined AI Gradient (Brighter mid-tone + readable contrast) */
 @layer base {
   :root {
     --ai-gradient-start: #06070a; /* near black */
-    --ai-gradient-mid: #0d183d;   /* deep bluish tone */
-    --ai-gradient-end: #1d0d49;   /* dark violet edge */
+    --ai-gradient-mid: #15235a;   /* brightened blue-violet tone */
+    --ai-gradient-end: #2b1670;   /* deep violet edge */
     --text-content: #ffffff;
     --highlight-yellow: #ffd300;
     --highlight-blue: #007bff;
@@ -19,7 +19,6 @@ body {
 }
 
 @layer utilities {
-  /* Gradient background with smooth fade */
   .bg-ai-gradient {
     background: linear-gradient(
       145deg,
@@ -39,5 +38,6 @@ body {
 
   .text-content {
     color: var(--text-content);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2); /* glow for readability */
   }
 }

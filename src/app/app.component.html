@@ -255,7 +255,7 @@
 
   <!-- 🔸 Disclaimer Box -->
   <div
-    class="max-w-3xl mx-auto bg-black/30 border border-gray-700 rounded-2xl px-5 py-5 text-sm text-gray-300 leading-relaxed">
+    class="max-w-3xl mx-auto bg-black/30 border border-gray-700 rounded-2xl px-5 py-5 text-[11px] text-gray-300 leading-tight">
     <p>
       <span class="text-yellow-400 font-semibold">Disclaimer:</span>
       OctaLearn is an initiative by OctaTech, designed to provide real-world
@@ -270,23 +270,49 @@
 
   <!-- 🔻 Copyright -->
   <p class="text-xs text-gray-400 mt-6">
-    © 2025 <span class="text-yellow-400 font-semibold">OctaLearn Bilaspur</span>. All rights reserved.
+    © 2025 <span class="text-yellow-400 font-semibold">OctaLearn</span>. All rights reserved.
   </p>
 </footer>
 
-<!-- ========== STICKY FOOTER CTA (FINAL) ========== -->
+<!-- ========== STICKY FOOTER CTA (FLIP STYLE) ========== -->
 <section class="py-0 text-center sticky bottom-0 text-gray-100 z-50">
   <div
     class="fixed bottom-0 left-0 w-full bg-gradient-to-r from-[#0b0c23] via-[#11124a] to-[#000] text-white px-4 py-3 flex items-center justify-between shadow-[0_-2px_25px_rgba(250,204,21,0.12)]">
 
     <!-- Countdown + Seats -->
     <div class="flex flex-col items-start leading-tight">
-      <span class="text-[15px] font-extrabold text-yellow-400 tracking-tight">
-        {{ daysLeft }}D {{ hoursLeft | number:'2.0' }}H {{ minutesLeft | number:'2.0' }}:{{ secondsLeft | number:'2.0' }}
-      </span>
-      <span class="text-[11px] text-gray-300 mt-0.5">
+      <div class="flex items-center gap-2">
+
+        <!-- Days -->
+        <div class="bg-[#11124a] border border-[#242652] rounded-md px-2 py-1.5 shadow-[0_0_6px_rgba(250,204,21,0.1)]">
+          <span class="text-yellow-400 font-extrabold text-[15px]">{{ daysLeft | number:'2.0' }}</span>
+          <p class="text-[9px] text-gray-400 leading-none mt-0.5">Days</p>
+        </div>
+
+        <!-- Hours -->
+        <div class="bg-[#11124a] border border-[#242652] rounded-md px-2 py-1.5 shadow-[0_0_6px_rgba(250,204,21,0.1)]">
+          <span class="text-yellow-400 font-extrabold text-[15px]">{{ hoursLeft | number:'2.0' }}</span>
+          <p class="text-[9px] text-gray-400 leading-none mt-0.5">Hours</p>
+        </div>
+
+        <!-- Minutes -->
+        <div class="bg-[#11124a] border border-[#242652] rounded-md px-2 py-1.5 shadow-[0_0_6px_rgba(250,204,21,0.1)]">
+          <span class="text-yellow-400 font-extrabold text-[15px]">{{ minutesLeft | number:'2.0' }}</span>
+          <p class="text-[9px] text-gray-400 leading-none mt-0.5">Mins</p>
+        </div>
+
+        <!-- Seconds -->
+        <div class="bg-[#11124a] border border-[#242652] rounded-md px-2 py-1.5 shadow-[0_0_6px_rgba(250,204,21,0.1)]">
+          <span class="text-yellow-400 font-extrabold text-[15px]">{{ secondsLeft | number:'2.0' }}</span>
+          <p class="text-[9px] text-gray-400 leading-none mt-0.5">Secs</p>
+        </div>
+
+      </div>
+
+      <!-- Seats Info -->
+      <p class="text-[11px] text-gray-300 mt-2">
         Seats Available <span class="text-yellow-400 font-semibold">{{ seatsAvailable }}</span>
-      </span>
+      </p>
     </div>
 
     <!-- Enroll Button -->

@@ -1,50 +1,64 @@
-<section
-  class="min-h-screen flex flex-col items-center text-center px-6 py-8 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-100 relative overflow-hidden">
 
-  <!-- Title -->
-  <h1 class="text-yellow-400 text-3xl font-bold mb-4">
-    AI Experience Day
-  </h1>
-
-  <!-- Date Box -->
-  <div class="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow mb-6">
-    22<sup>nd</sup> November 2025 • 9:00 AM – 1:00 PM IST
-  </div>
-
-  <!-- Main Heading Box -->
-  <div
-    class="border border-yellow-400 rounded-lg py-4 px-5 mb-8 max-w-sm text-white text-center shadow-md">
-    <h2 class="text-base font-semibold leading-snug">
-      Join and Learn How <span class="text-yellow-400">Generative AI</span><br />
-      is Transforming Businesses & Automation
+<!-- FAQ Section -->
+<section class="py-16 px-4 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-100">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-center mb-12 text-yellow-400 tracking-wide">
+      Frequently Asked Questions
     </h2>
-    <p class="text-gray-300 text-xs mt-2">
-      Before it’s too late — be part of the future.
-    </p>
-  </div>
+    <!-- <div class="w-16 h-1 bg-yellow-400 mx-auto mt-3 rounded-full"></div> -->
+    <div class="space-y-4 mt-5">
+      <div *ngFor="let faq of faqs" class="rounded border-b border-gray-700 transition">
+        <button (click)="toggleFaq(faq.id)"
+          class="w-full p-3 flex gap-1 justify-between items-center text-left transition rounded-2xl">
+          <span class="font-semibold text-sm md:text-lg text-white">
+            {{ faq.question }}
+          </span>
+          <span class="text-yellow-400 text-2xl font-bold">{{ faq.open ? '−' : '+' }}</span>
+        </button>
 
-  <!-- Mentor Section -->
-  <div class="flex flex-col items-center mt-2 mb-24">
-    <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-yellow-400 mb-3">
-      <img src="https://via.placeholder.com/150" alt="Aaditya Mishra" class="w-full h-full object-cover" />
+        <div *ngIf="faq.open" class="text-sm px-3 pb-3 text-gray-300 pt-3">
+          {{ faq.answer }}
+        </div>
+      </div>
     </div>
-    <p class="text-yellow-400 text-xs font-medium mb-1">Your AI Mentor for the Day</p>
-    <h3 class="text-yellow-400 text-lg font-bold">Aaditya Mishra</h3>
-    <p class="text-gray-200 text-xs mb-1">Full-Stack Developer & Gen AI Enthusiast</p>
-    <p class="text-gray-400 text-xs max-w-xs">
-      Experience hands-on learning with real-world AI tools, workflows & automation setups.
-    </p>
   </div>
+</section>
 
-  <!-- Sticky Bottom Bar (Fixed & Visible) -->
+<!-- Footer CTA -->
+<section
+  class="py-0 text-center sticky bottom-0 text-gray-100 z-50">
   <div
-    class="fixed bottom-0 left-0 w-full bg-[#0b0c23]/95 border-t border-yellow-400 flex items-center justify-between px-4 py-2 text-xs sm:text-sm shadow-lg z-50">
-    <p class="text-gray-200 truncate">
-      Offer ends in <span class="text-yellow-400 font-semibold">14:54 mins</span>
-    </p>
+    class="fixed bottom-0 left-0 w-full bg-gradient-to-r from-[#0b0c23] via-[#11124a] to-[#000] text-white px-3 py-3 flex items-center justify-between gap-3 shadow-[0_-2px_25px_rgba(250,204,21,0.12)]">
+
+    <!-- Countdown + Seats -->
+    <div class="flex flex-col items-start leading-tight">
+      <!-- Big, compact countdown -->
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-yellow-400 tracking-tight">
+          {{ daysLeft }}D {{ hoursLeft }}H
+        </span>
+
+        <!-- small live mm:ss pill -->
+        <span class="text-[12px] font-bold text-black bg-yellow-400/90 px-2 py-0.5 rounded">
+          {{ minutesLeft | number:'2.0' }}:{{ secondsLeft | number:'2.0' }} min
+        </span>
+
+        <!-- strike-through price (optional) -->
+        <!-- <span class="text-gray-400 line-through text-sm">minutes</span> -->
+      </div>
+
+      <!-- Seats -->
+      <p class="text-gray-300 text-[10px] font-medium mt-0.5 underline">
+        Seats Available <span class="text-yellow-400 font-semibold">{{ seatsAvailable }}</span>
+      </p>
+    </div>
+
+    <!-- CTA -->
     <button
-      class="bg-yellow-400 text-gray-900 font-semibold px-3 py-1 rounded-md hover:bg-yellow-300 transition text-xs whitespace-nowrap">
-      Reserve ₹99
+      (click)="navigateToRegisterPage()"
+      class="bg-[#FACC15] text-black font-extrabold text-[13px] px-4 py-2 rounded-lg active:translate-y-[1px] transition">
+      ENROLL NOW /-
     </button>
   </div>
 </section>
+

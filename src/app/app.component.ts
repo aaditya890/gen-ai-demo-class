@@ -1,23 +1,27 @@
-import { CommonModule } from "@angular/common"
-import { Component,  OnInit,  OnDestroy } from "@angular/core"
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+
+
+interface BlogItem {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  feedback: string;
+  image: string;
+}
 
 interface FAQ {
-  id: number
-  question: string
-  answer: string
-  open: boolean
+  question: string;
+  answer: string;
 }
-
-interface Video {
-  id: number
-  title: any
-}
-
-interface CoachStat {
-  value: string
-  label: string
-}
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -25,8 +29,74 @@ interface CoachStat {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit, OnDestroy {
-  faqs: FAQ[] = [
+export class AppComponent {
+   // countdown pieces
+  daysLeft = 0;
+  hoursLeft = 0;
+  minutesLeft = 0;
+  secondsLeft = 0;
+
+  // seats
+  seatsAvailable = 21;
+
+  // set your deadline here (IST). Use local ISO to avoid TZ surprises.
+  private targetDate = new Date('2025-11-22T00:00:00');
+
+  private timerId!: any;
+
+  ngOnInit(): void {
+    this.tick(); // initial render
+    this.timerId = setInterval(() => this.tick(), 1000); // live countdown
+    this.updateSeats();
+  }
+
+  ngOnDestroy(): void {
+    if (this.timerId) clearInterval(this.timerId);
+  }
+
+  private tick(): void {
+    const now = new Date().getTime();
+    let ms = this.targetDate.getTime() - now;
+
+    if (ms <= 0) {
+      this.daysLeft = 0; this.hoursLeft = 0; this.minutesLeft = 0; this.secondsLeft = 0;
+      if (this.timerId) clearInterval(this.timerId);
+      return;
+    }
+
+    const day = 1000 * 60 * 60 * 24;
+    const hour = 1000 * 60 * 60;
+    const minute = 1000 * 60;
+
+    this.daysLeft = Math.floor(ms / day);
+    ms %= day;
+
+    this.hoursLeft = Math.floor(ms / hour);
+    ms %= hour;
+
+    this.minutesLeft = Math.floor(ms / minute);
+    ms %= minute;
+
+    this.secondsLeft = Math.floor(ms / 1000);
+  }
+
+  private updateSeats(): void {
+    // start from a campaign date; 3 seats reduce per day
+    const startDate = new Date('2025-11-10T00:00:00');
+    const today = new Date();
+    // difference in *calendar days* (truncate time)
+    const start = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()).getTime();
+    const curr = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
+    const daysPassed = Math.max(Math.floor((curr - start) / (1000 * 60 * 60 * 24)), 0);
+
+    this.seatsAvailable = Math.max(21 - daysPassed * 3, 0);
+  }
+
+  navigateToRegisterPage(): void {
+    window.location.href = 'https://forms.gle/ZmTCG49KAFLBuBx17';
+  }
+
+    faqs: any[] = [
     {
       id: 1,
       question: "How To Get The Info To Determine Program?",
@@ -88,58 +158,15 @@ export class AppComponent implements OnInit, OnDestroy {
       open: false,
     },
   ]
-
-  videos: any[] = [
-    { id: 1, title: "Right Strategies and content - grow like clockwork for a successful business" }
-  ]
-
-  coachStats: CoachStat[] = [
-    { value: "18", label: "Years of Training and Coaching" },
-    { value: "2.3M+", label: "YouTube Subscribers In The Last 7 Years" },
-    { value: "600+", label: "Workshops Conducted" },
-    { value: "1.9M+", label: "Followers Across Platforms" },
-    { value: "700K", label: "Past Customers" },
-    { value: "20K+", label: "Live Entrepreneurs Community" },
-    { value: "2.8K+", label: "Coaching Clients" },
-    { value: "196+", label: "Industries Worked With" },
-  ]
-
-  timer = 3600 // 1 hour in seconds
-  private timerInterval: any
-
-  ngOnInit() {
-    this.startTimer()
-  }
-
-  ngOnDestroy() {
-    if (this.timerInterval) {
-      clearInterval(this.timerInterval)
-    }
-  }
-
   toggleFaq(id: number) {
-    const faq = this.faqs.find((f) => f.id === id)
-    if (faq) {
-      faq.open = !faq.open
-    }
-  }
+  this.faqs = this.faqs.map(faq => ({
 
-  startTimer() {
-    this.timerInterval = setInterval(() => {
-      if (this.timer > 0) {
-        this.timer--
-      } else {
-        clearInterval(this.timerInterval)
-      }
-    }, 1000)
-  }
+    ...faq,
 
-  formatTimer(seconds: number) {
-    const minutes = Math.floor(seconds / 60)
-    const secs = seconds % 60
-    return {
-      minutes: String(minutes).padStart(2, "0"),
-      seconds: String(secs).padStart(2, "0"),
-    }
-  }
+    open: faq.id === id ? !faq.open : false
+
+  }));
 }
+}
+
+

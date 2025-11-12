@@ -43,17 +43,14 @@ interface FAQItem {
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
- // Countdown values
   daysLeft = 0;
   hoursLeft = 0;
   minutesLeft = 0;
   secondsLeft = 0;
-
-  // Seats (start at 21, reduce by 3 per calendar day from a start date)
   seatsAvailable = 21;
 
-  // Target start time for the session (IST)
-  private targetDate = new Date('2025-11-15T09:00:00'); // 15 Nov 2025, 9:00 AM
+  // 🟡 Updated target date (22 Nov 2025)
+  private targetDate = new Date('2025-11-22T09:00:00'); 
 
   private timerId!: any;
 
@@ -80,7 +77,6 @@ export class AppComponent {
     { id: 8, question: 'Where is the institute?', answer: 'FF-03, G.S. Plaza, Telipara, Bilaspur, Chhattisgarh 495001. Phone: +91 96444 96960.', open: false }
   ];
 
-  // ===== Lifecycle =====
   ngOnInit(): void {
     this.tick();
     this.timerId = setInterval(() => this.tick(), 1000);
@@ -90,9 +86,7 @@ export class AppComponent {
   ngOnDestroy(): void {
     if (this.timerId) clearInterval(this.timerId);
   }
-
-  // ===== Countdown =====
-  private tick(): void {
+ private tick(): void {
     const now = new Date().getTime();
     let diff = this.targetDate.getTime() - now;
 
@@ -119,9 +113,8 @@ export class AppComponent {
     this.secondsLeft = Math.floor(diff / second);
   }
 
-  // ===== Seats logic =====
   private updateSeats(): void {
-    const startDate = new Date('2025-11-10T00:00:00'); // campaign start
+    const startDate = new Date('2025-11-10T00:00:00');
     const today = new Date();
 
     const start = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()).getTime();
@@ -131,12 +124,9 @@ export class AppComponent {
     this.seatsAvailable = Math.max(21 - daysPassed * 3, 0);
   }
 
-  // ===== Actions =====
   navigateToRegisterPage(): void {
-    // Redirect to your form / landing:
     window.location.href = 'https://forms.gle/ZmTCG49KAFLBuBx17';
   }
-
   toggleFaq(id: number): void {
     this.faqs = this.faqs.map(f => ({ ...f, open: f.id === id ? !f.open : false }));
   }

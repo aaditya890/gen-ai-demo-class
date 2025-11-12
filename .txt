@@ -22,3 +22,53 @@
     </div>
   </div>
 </section>
+
+
+
+
+ffaq or footer 
+
+<!-- ========== FAQ ========== -->
+<section class="py-10  px-4 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-100">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-extrabold text-center mb-8 text-yellow-400 tracking-wide">
+      Frequently Asked Questions
+    </h2>
+
+    <div class="space-y-3">
+      <div *ngFor="let faq of faqs" class="rounded border border-gray-700 bg-black/30">
+        <button (click)="toggleFaq(faq.id)"
+          class="w-full p-3 flex gap-2 justify-between items-center text-left">
+          <span class="font-semibold text-sm md:text-base text-white">
+            {{ faq.question }}
+          </span>
+          <span class="text-yellow-400 text-2xl font-bold">{{ faq.open ? '−' : '+' }}</span>
+        </button>
+
+        <div *ngIf="faq.open" class="text-sm px-3 pb-4 text-gray-300 -mt-1">
+          {{ faq.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="pb-24 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-300 pt-8 text-center border-t border-gray-800">
+  <!-- Logo -->
+  <div class="flex justify-center mb-3">
+    <img src="assets/LogoW.png" alt="OctaLearn Logo" class="h-8 opacity-90">
+  </div>
+
+  <!-- Copyright -->
+  <p class="text-xs text-gray-400 mb-4">
+    © 2025 <span class="text-yellow-400 font-semibold">OctaLearn Bilaspur</span>. All rights reserved.
+  </p>
+
+  <!-- Footer Links -->
+  <div class="flex flex-wrap justify-center gap-6 text-[13px] text-gray-400">
+    <a href="#" class="hover:text-yellow-400 transition">Terms & Conditions</a>
+    <a href="#" class="hover:text-yellow-400 transition">Privacy Policy</a>
+    <a href="#" class="hover:text-yellow-400 transition">Refund Policy</a>
+  </div>
+</footer>

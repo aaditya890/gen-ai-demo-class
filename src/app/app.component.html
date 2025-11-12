@@ -244,24 +244,36 @@
     </iframe>
   </div>
 </section>
-<footer class="pb-24 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23]  text-gray-300 text-center border-t border-gray-800">
-  <!-- Logo -->
-  <div class="flex justify-center mb-3">
-    <img src="assets/LogoW.png" alt="OctaLearn Logo" class="h-8 opacity-90">
+<!-- ========== FOOTER SECTION ========== -->
+<footer
+  class="pb-24 pt-10 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-300 text-center border-t border-gray-800">
+
+  <!-- 🔹 Logo -->
+  <div class="flex justify-center mb-4">
+    <img src="assets/LogoW.png" alt="OctaLearn Logo" class="h-full">
   </div>
 
-  <!-- Copyright -->
-  <p class="text-xs text-gray-400 mb-4">
+  <!-- 🔸 Disclaimer Box -->
+  <div
+    class="max-w-3xl mx-auto bg-black/30 border border-gray-700 rounded-2xl px-5 py-5 text-sm text-gray-300 leading-relaxed">
+    <p>
+      <span class="text-yellow-400 font-semibold">Disclaimer:</span>
+      OctaLearn is an initiative by OctaTech, designed to provide real-world
+      digital and e-commerce skills through project-based learning.
+      While we offer comprehensive placement assistance, we do not guarantee job placement.
+      Outcomes may vary based on individual effort, consistency, and market conditions.
+      All logos, trademarks, and brand names used in training materials belong to their respective owners
+      and are used for educational purposes only.
+    
+    </p>
+  </div>
+
+  <!-- 🔻 Copyright -->
+  <p class="text-xs text-gray-400 mt-6">
     © 2025 <span class="text-yellow-400 font-semibold">OctaLearn Bilaspur</span>. All rights reserved.
   </p>
-
-  <!-- Footer Links -->
-  <div class="flex flex-wrap justify-center gap-6 text-[13px] text-gray-400">
-    <a href="#" class="hover:text-yellow-400 transition">Terms & Conditions</a>
-    <a href="#" class="hover:text-yellow-400 transition">Privacy Policy</a>
-    <a href="#" class="hover:text-yellow-400 transition">Refund Policy</a>
-  </div>
 </footer>
+
 <!-- ========== STICKY FOOTER CTA (FINAL) ========== -->
 <section class="py-0 text-center sticky bottom-0 text-gray-100 z-50">
   <div
@@ -270,7 +282,7 @@
     <!-- Countdown + Seats -->
     <div class="flex flex-col items-start leading-tight">
       <span class="text-[15px] font-extrabold text-yellow-400 tracking-tight">
-        {{ daysLeft | number:'2.0' }} Days {{ hoursLeft | number:'2.0' }}H {{ minutesLeft | number:'2.0' }}:{{ secondsLeft | number:'2.0' }}
+        {{ daysLeft }}D {{ hoursLeft | number:'2.0' }}H {{ minutesLeft | number:'2.0' }}:{{ secondsLeft | number:'2.0' }}
       </span>
       <span class="text-[11px] text-gray-300 mt-0.5">
         Seats Available <span class="text-yellow-400 font-semibold">{{ seatsAvailable }}</span>

@@ -18,3 +18,11 @@
   animation: scroll-right 32s linear infinite;
 }
 
+@keyframes pulseGlow {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+.animate-pulse {
+  animation: pulseGlow 1.2s infinite ease-in-out;
+}

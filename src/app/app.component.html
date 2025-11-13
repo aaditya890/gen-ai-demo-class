@@ -47,7 +47,7 @@
         </h3>
 
         <p class="text-gray-200 text-[13px] leading-1 sm:text-[14px] font-medium mt-2">
-          Founder , OctaLearn
+          Co-Founder , OctaLearn
         </p>
 
         <p class="text-gray-400 text-[13px] sm:text-[14px] leading-tight max-w-[280px] sm:max-w-[320px] mt-2">
@@ -58,31 +58,29 @@
       </div>
     </div>
     <!-- ⭐ RATING BAR — EXACT SIDE-BY-SIDE ALIGNMENT -->
-<div 
-  class="w-[92%] sm:w-[480px] md:w-[600px] mx-auto 
+    <div class="w-[92%] sm:w-[480px] md:w-[600px] mx-auto 
          bg-[#0f1135]/80 border border-[#242652] 
          rounded-xl py-4 px-5 
          shadow-[0_0_15px_rgba(255,255,255,0.05)]">
 
-  <div class="flex items-center gap-4">
-    <!-- Stars Left -->
-    <div class="flex text-yellow-400 text-xl">
-      ★★★★☆
-    </div>
+      <div class="flex items-center gap-4">
+        <!-- Stars Left -->
+        <div class="flex text-yellow-400 text-xl">
+          ★★★★☆
+        </div>
 
-    <!-- Text Right -->
-    <p class="text-gray-200 text-[13px] sm:text-sm leading-tight">
-      <span class="text-yellow-400 font-semibold">1000+ students & professionals</span><br>
-      have rated our module with <span class="text-yellow-400 font-semibold">4.7★</span><br>
-      My programs hold <span class="text-yellow-400 font-semibold">4.9★</span>
-    </p>
-  </div>
-</div>
+        <!-- Text Right -->
+        <p class="text-gray-200 text-[13px] sm:text-sm leading-tight">
+          <span class="text-yellow-400 font-semibold">1000+ students & professionals</span><br>
+          have rated our module with <span class="text-yellow-400 font-semibold">4.7★</span><br>
+          My programs hold <span class="text-yellow-400 font-semibold">4.9★</span>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 <!-- ========== TOOLS SLIDER ========== -->
-<section 
-  class="py-12 text-center overflow-hidden 
+<section class="py-12 text-center overflow-hidden 
   bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100">
 
   <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">
@@ -97,15 +95,14 @@
   <div class="overflow-hidden w-full relative py-3">
     <div class="flex scroll-left gap-4 whitespace-nowrap w-max mx-auto">
       @for (logo of icons.concat(icons); track $index) {
-        <div 
-          class="flex items-center gap-2 px-4 py-2 rounded-full
+      <div class="flex items-center gap-2 px-4 py-2 rounded-full
                  bg-white/5 border border-white/10
                  text-white whitespace-nowrap flex-shrink-0
                  hover:border-yellow-400/40 hover:shadow-[0_0_12px_rgba(250,204,21,0.15)]
                  transition">
-          <img [src]="logo.src" class="w-6 h-6 rounded-full" />
-          <span class="text-sm font-medium">{{ logo.name }}</span>
-        </div>
+        <img [src]="logo.src" class="w-6 h-6 rounded-full" />
+        <span class="text-sm font-medium">{{ logo.name }}</span>
+      </div>
       }
     </div>
   </div>
@@ -114,15 +111,14 @@
   <div class="overflow-hidden w-full relative py-3 mt-1">
     <div class="flex scroll-right gap-4 whitespace-nowrap w-max mx-auto">
       @for (logo of icons.concat(icons); track $index) {
-        <div 
-          class="flex items-center gap-2 px-4 py-2 rounded-full
+      <div class="flex items-center gap-2 px-4 py-2 rounded-full
                  bg-white/5 border border-white/10
                  text-white whitespace-nowrap flex-shrink-0
                  hover:border-yellow-400/40 hover:shadow-[0_0_12px_rgba(250,204,21,0.15)]
                  transition">
-          <img [src]="logo.src" class="w-6 h-6 rounded-full" />
-          <span class="text-sm font-medium">{{ logo.name }}</span>
-        </div>
+        <img [src]="logo.src" class="w-6 h-6 rounded-full" />
+        <span class="text-sm font-medium">{{ logo.name }}</span>
+      </div>
       }
     </div>
   </div>
@@ -181,9 +177,90 @@
     bonuses worth <span class="text-yellow-400 font-semibold">₹6,487</span>.
   </p>
 </section>
+
+<!-- ========== ULTRA CLEAN TICKET SECTION ========== -->
+<section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 px-5 py-8">
+
+  <div
+    class="max-w-md mx-auto rounded-2xl p-7 
+           bg-gradient-to-b from-[#0f1135] to-[#0b0c23]
+           border border-[#242652]
+           shadow-[0_0_30px_rgba(255,255,255,0.08)]">
+
+    <!-- HEADING -->
+    <div class="text-center mb-6">
+      <h2 class="text-2xl font-extrabold text-white">
+        Your Pass Is Waiting For You
+      </h2>
+      <div class="w-28 h-[3px] bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mt-2 rounded-full"></div>
+    </div>
+
+    <!-- PRICE BOX -->
+    <div class="bg-black/20 border border-[#242652] rounded-xl p-5">
+
+      <!-- Standard -->
+      <div class="flex justify-between items-center mb-4">
+        <div class="flex items-center gap-2">
+          <span class="h-2.5 w-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
+          <p class="text-gray-300 font-medium">Standard Price</p>
+        </div>
+        <p class="text-gray-500 line-through font-medium text-sm">₹5999</p>
+      </div>
+
+      <!-- Early Bird -->
+      <div class="flex justify-between items-center mb-6">
+        <div class="flex items-center gap-2">
+          <span class="h-2.5 w-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
+          <p class="text-gray-300 font-medium">Early Bird Offer</p>
+        </div>
+        <p class="text-gray-500 line-through font-medium text-sm">₹3999</p>
+      </div>
+    </div>
+
+    <!-- SEATS WARNING -->
+    <div
+      class="flex items-start gap-3 bg-black/20 p-4 rounded-lg border border-white/10 mt-2 shadow-inner">
+      <div class="text-yellow-300 text-xl">🧾</div>
+      <p class="text-gray-300 text-[13px] leading-tight">
+        Seats are limited — automation waits for no one.
+      </p>
+    </div>
+
+    <!-- CTA BUTTON — ONLY THIS ONE -->
+    <div class="mt-7">
+      <button
+        (click)="navigateToRegisterPage()"
+        class="w-full py-3.5 rounded-lg text-black font-extrabold text-sm
+               bg-gradient-to-r from-[#fbbf24] to-[#f59e0b]
+               hover:from-[#facc15] hover:to-[#fbbf24]
+               shadow-[0_0_25px_rgba(250,204,21,0.35)]
+               transition-all active:scale-[0.98]">
+        CLAIM YOUR FREE <span class="line-through">₹0</span> PASS 🎉
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+@keyframes pulseGlow {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+.animate-pulse {
+  animation: pulseGlow 1.2s infinite ease-in-out;
+}
+</style>
+
+
+
+
+
 <!-- ========== WHAT WILL CHANGE IN YOU (PDF-BASED TRANSFORMATION SECTION) ========== -->
-<section
-  class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 py-14 px-5 flex flex-col items-center">
+
+<section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 py-14 px-5 flex flex-col items-center">
 
   <div class="max-w-3xl w-full text-center">
 
@@ -192,7 +269,7 @@
       How This Will Transform You
     </h2>
     <p class="text-gray-300 text-sm max-w-md mx-auto mb-8">
-      After this AI Day — you won’t just understand AI.  
+      After this AI Day — you won’t just understand AI.
       You’ll use it <span class="font-semibold text-white">like the top 1% creators, founders & professionals.</span>
     </p>
 
@@ -200,8 +277,7 @@
     <div class="space-y-5">
 
       <!-- CARD 1 -->
-      <div
-        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
+      <div class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
                hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)]
                transition-all duration-300">
         <h3 class="text-white font-semibold text-[16px] mb-1">
@@ -213,41 +289,41 @@
       </div>
 
       <!-- CARD 2 -->
-      <div
-        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
+      <div class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
                hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)]
                transition-all duration-300">
         <h3 class="text-white font-semibold text-[16px] mb-1">
           You’ll master tools that multiply your productivity
         </h3>
         <p class="text-gray-300 text-[14px] leading-tight">
-          Automate marketing, content, workflows, and decision-making using real-world AI tools the industry actually uses.
+          Automate marketing, content, workflows, and decision-making using real-world AI tools the industry actually
+          uses.
         </p>
       </div>
 
       <!-- CARD 3 -->
-      <div
-        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
+      <div class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
                hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)]
                transition-all duration-300">
         <h3 class="text-white font-semibold text-[16px] mb-1">
           You’ll develop an AI-first mindset
         </h3>
         <p class="text-gray-300 text-[14px] leading-tight">
-          Learn how top performers approach AI — so you can think smarter, move faster, and stay future-proof in your career.
+          Learn how top performers approach AI — so you can think smarter, move faster, and stay future-proof in your
+          career.
         </p>
       </div>
 
       <!-- CARD 4 -->
-      <div
-        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
+      <div class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
                hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)]
                transition-all duration-300">
         <h3 class="text-white font-semibold text-[16px] mb-1">
           You’ll join a network that pushes you forward
         </h3>
         <p class="text-gray-300 text-[14px] leading-tight">
-          Become part of OctaLearn’s Alumni Network — where opportunities, collaboration & advanced AI learning continues.
+          Become part of OctaLearn’s Alumni Network — where opportunities, collaboration & advanced AI learning
+          continues.
         </p>
       </div>
 
@@ -255,9 +331,7 @@
 
     <!-- CTA BUTTON -->
     <div class="mt-10">
-      <button
-        (click)="navigateToRegisterPage()"
-        class="px-8 py-3 rounded-xl font-semibold text-black text-sm sm:text-base
+      <button (click)="navigateToRegisterPage()" class="px-8 py-3 rounded-xl font-semibold text-black text-sm sm:text-base
                bg-gradient-to-r from-[#fbbf24] to-[#f59e0b]
                hover:from-[#facc15] hover:to-[#fbbf24]
                shadow-[0_0_18px_rgba(250,204,21,0.25)] transition-all">
@@ -270,7 +344,8 @@
 
 <!-- ========== WHAT'S INSIDE SECTION (PDF BASED + CTA) ========== -->
 <section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 px-5 py-14">
-  <div class="max-w-xl mx-auto bg-black/30 border border-gray-700 rounded-xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+  <div
+    class="max-w-xl mx-auto bg-black/30 border border-gray-700 rounded-xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
 
     <!-- Heading -->
     <h2 class="text-xl font-bold text-yellow-400 mb-2">What's Inside</h2>
@@ -304,12 +379,10 @@
 
     <!-- CTA BUTTON -->
     <div class="mt-6 text-center">
-      <button
-        (click)="navigateToRegisterPage()"
-        class="px-8 py-3 rounded-lg font-semibold text-black bg-gradient-to-r 
+      <button (click)="navigateToRegisterPage()" class="px-8 py-3 rounded-lg font-semibold text-black bg-gradient-to-r 
         from-[#fbbf24] to-[#f59e0b] hover:from-[#facc15] hover:to-[#fbbf24]
         shadow-[0_0_18px_rgba(250,204,21,0.25)] transition-all text-sm">
-        Join the Activation
+        Join Now
       </button>
     </div>
 

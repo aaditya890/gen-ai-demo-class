@@ -1,5 +1,6 @@
+<!-- ========== HERO SECTION ========== -->
 <section
-  class="min-h-screen flex flex-col items-center py-5 text-center pb-8 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 relative">
+  class="min-h-screen flex flex-col items-center py-4 text-center pb-4 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 relative">
   <img src="assets/LogoW.png" alt="" class="pb-5">
   <!-- Wrapper (relative for sticky behavior) -->
   <div class="relative mt-10 w-full flex flex-col items-center">
@@ -7,9 +8,9 @@
     <!-- 🔴 Sticky Red Box (sticks within this section) -->
     <div
       class="bg-[#CD2B2E] text-white text-xs sm:text-sm rounded-md shadow-lg leading-tight absolute -top-10 z-20 w-[70%] sm:w-[480px] md:w-[600px] py-2">
-      4 HOUR ONLINE WORKSHOP<br />
+      2 HOUR ONLINE WORKSHOP<br />
       <span class="font-normal">
-        STARTS ON 15TH NOVEMBER 2025<br />(9:00 AM – 1:00 PM IST)
+        STARTS ON 22TH NOVEMBER 2025<br />(10:00 AM – 12:00 PM)
       </span>
     </div>
 
@@ -28,7 +29,7 @@
 
     <!-- 🧑‍🏫 Coach Section -->
     <div
-      class="flex items-center sm:items-start justify-center gap-4 sm:gap-6 w-[92%] sm:w-[480px] md:w-[600px] mx-auto text-left bg-transparent py-4">
+      class="flex items-center sm:items-start justify-center gap-4 sm:gap-6 w-[92%] sm:w-[480px] md:w-[600px] mx-auto text-left bg-transparent py-1">
 
       <!-- 🧑‍🏫 Left Photo -->
       <div class="w-56 h-56 sm:w-52 sm:h-56 rounded-md overflow-hidden">
@@ -56,31 +57,86 @@
         </p>
       </div>
     </div>
-    <!-- ⭐ Rating Bar -->
-    <div class="bg-[#1a1a1a]/80 w-full rounded-lg py-6 px-3 gap-2">
-      <div class="flex items-center justify-center gap-3">
-        <span class="text-yellow-400 text-xl">★★★★☆</span>
-        <p class="text-xs text-gray-200 font-medium text-justify">
-          <span class="text-[#ffed4a] font-semibold">1000+</span> students & professionals <br> have rated our module
-          with 4.7 <br> ratings
-          My Programs with 4.9★
-        </p>
-      </div>
+    <!-- ⭐ RATING BAR — EXACT SIDE-BY-SIDE ALIGNMENT -->
+<div 
+  class="w-[92%] sm:w-[480px] md:w-[600px] mx-auto 
+         bg-[#0f1135]/80 border border-[#242652] 
+         rounded-xl py-4 px-5 
+         shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+
+  <div class="flex items-center gap-4">
+    <!-- Stars Left -->
+    <div class="flex text-yellow-400 text-xl">
+      ★★★★☆
+    </div>
+
+    <!-- Text Right -->
+    <p class="text-gray-200 text-[13px] sm:text-sm leading-tight">
+      <span class="text-yellow-400 font-semibold">1000+ students & professionals</span><br>
+      have rated our module with <span class="text-yellow-400 font-semibold">4.7★</span><br>
+      My programs hold <span class="text-yellow-400 font-semibold">4.9★</span>
+    </p>
+  </div>
+</div>
+  </div>
+</section>
+<!-- ========== TOOLS SLIDER ========== -->
+<section 
+  class="py-12 text-center overflow-hidden 
+  bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100">
+
+  <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">
+    Keep your existing tech stack
+  </h2>
+
+  <p class="text-gray-300 mb-8">
+    We work with your platforms, meaning we seamlessly slot into your team
+  </p>
+
+  <!-- ROW 1 -->
+  <div class="overflow-hidden w-full relative py-3">
+    <div class="flex scroll-left gap-4 whitespace-nowrap w-max mx-auto">
+      @for (logo of icons.concat(icons); track $index) {
+        <div 
+          class="flex items-center gap-2 px-4 py-2 rounded-full
+                 bg-white/5 border border-white/10
+                 text-white whitespace-nowrap flex-shrink-0
+                 hover:border-yellow-400/40 hover:shadow-[0_0_12px_rgba(250,204,21,0.15)]
+                 transition">
+          <img [src]="logo.src" class="w-6 h-6 rounded-full" />
+          <span class="text-sm font-medium">{{ logo.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="overflow-hidden w-full relative py-3 mt-1">
+    <div class="flex scroll-right gap-4 whitespace-nowrap w-max mx-auto">
+      @for (logo of icons.concat(icons); track $index) {
+        <div 
+          class="flex items-center gap-2 px-4 py-2 rounded-full
+                 bg-white/5 border border-white/10
+                 text-white whitespace-nowrap flex-shrink-0
+                 hover:border-yellow-400/40 hover:shadow-[0_0_12px_rgba(250,204,21,0.15)]
+                 transition">
+          <img [src]="logo.src" class="w-6 h-6 rounded-full" />
+          <span class="text-sm font-medium">{{ logo.name }}</span>
+        </div>
+      }
     </div>
   </div>
 </section>
-
-<app-tools-slider></app-tools-slider>
 <!-- ========== REGISTER / COUNTDOWN SECTION ========== -->
 <section
   class="flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] py-8 px-4 text-gray-100">
 
   <!-- top info -->
   <p class="text-xs text-gray-300 font-medium mb-1">
-    STARTS ON 15th November 2025 (9:00 AM – 1:00 PM IST)
+    STARTS ON 22TH NOVEMBER 2025 (10:00 AM – 12:00 PM)
   </p>
   <p class="text-[11px] text-gray-400 mb-5">
-    Language – Basic English
+    Language – English , Hindi
   </p>
 
   <!-- glowing register btn -->
@@ -125,120 +181,142 @@
     bonuses worth <span class="text-yellow-400 font-semibold">₹6,487</span>.
   </p>
 </section>
-<!-- ========== WHAT WILL CHANGE IN YOU ========== -->
+<!-- ========== WHAT WILL CHANGE IN YOU (PDF-BASED TRANSFORMATION SECTION) ========== -->
 <section
   class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 py-14 px-5 flex flex-col items-center">
+
   <div class="max-w-3xl w-full text-center">
+
     <!-- Heading -->
-    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">
-      What Will Change In You?
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight">
+      How This Will Transform You
     </h2>
+    <p class="text-gray-300 text-sm max-w-md mx-auto mb-8">
+      After this AI Day — you won’t just understand AI.  
+      You’ll use it <span class="font-semibold text-white">like the top 1% creators, founders & professionals.</span>
+    </p>
 
     <!-- Cards Container -->
     <div class="space-y-5">
-      <!-- Card 1 -->
+
+      <!-- CARD 1 -->
       <div
-        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652] hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.1)] transition-all duration-300">
+        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
+               hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)]
+               transition-all duration-300">
         <h3 class="text-white font-semibold text-[16px] mb-1">
-          You’ll go from learning theory to doing real digital work
+          You’ll build real AI-powered systems
         </h3>
         <p class="text-gray-300 text-[14px] leading-tight">
-          Work on live ads, SEO, e-commerce campaigns, and content creation — the exact skills used by real agencies.
+          Create your own automation project that thinks, works, and executes tasks — not theory… actual working output.
         </p>
       </div>
 
-      <!-- Card 2 -->
+      <!-- CARD 2 -->
       <div
-        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652] hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.1)] transition-all duration-300">
-        <h3 class="text-white font-semibold text-[16px] mb-2">
-          You’ll be job-ready
+        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
+               hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)]
+               transition-all duration-300">
+        <h3 class="text-white font-semibold text-[16px] mb-1">
+          You’ll master tools that multiply your productivity
         </h3>
-        <p class="text-gray-300 text-[14px] leading-relaxed">
-          Build a strong portfolio, develop practical marketing skills, and gain confidence to crack interviews.
+        <p class="text-gray-300 text-[14px] leading-tight">
+          Automate marketing, content, workflows, and decision-making using real-world AI tools the industry actually uses.
         </p>
       </div>
 
-      <!-- Card 3 -->
+      <!-- CARD 3 -->
       <div
-        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652] hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.1)] transition-all duration-300">
-        <h3 class="text-white font-semibold text-[16px] mb-2">
-          You’ll think like a marketer
+        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
+               hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)]
+               transition-all duration-300">
+        <h3 class="text-white font-semibold text-[16px] mb-1">
+          You’ll develop an AI-first mindset
         </h3>
-        <p class="text-gray-300 text-[14px] leading-relaxed">
-          Understand not just how to use tools, but how to design strategies and campaigns that actually convert.
+        <p class="text-gray-300 text-[14px] leading-tight">
+          Learn how top performers approach AI — so you can think smarter, move faster, and stay future-proof in your career.
         </p>
       </div>
 
-      <!-- Card 4 -->
+      <!-- CARD 4 -->
       <div
-        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652] hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.1)] transition-all duration-300">
-        <h3 class="text-white font-semibold text-[16px] mb-2">
-          You’ll gain the mindset to freelance or launch your own brand
+        class="p-5 sm:p-6 rounded-xl bg-[#0f1135]/70 border border-[#242652]
+               hover:border-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)]
+               transition-all duration-300">
+        <h3 class="text-white font-semibold text-[16px] mb-1">
+          You’ll join a network that pushes you forward
         </h3>
-        <p class="text-gray-300 text-[14px] leading-relaxed">
-          Go beyond jobs — build your personal brand, freelance clients, or launch your business with confidence.
+        <p class="text-gray-300 text-[14px] leading-tight">
+          Become part of OctaLearn’s Alumni Network — where opportunities, collaboration & advanced AI learning continues.
         </p>
       </div>
+
     </div>
+
+    <!-- CTA BUTTON -->
+    <div class="mt-10">
+      <button
+        (click)="navigateToRegisterPage()"
+        class="px-8 py-3 rounded-xl font-semibold text-black text-sm sm:text-base
+               bg-gradient-to-r from-[#fbbf24] to-[#f59e0b]
+               hover:from-[#facc15] hover:to-[#fbbf24]
+               shadow-[0_0_18px_rgba(250,204,21,0.25)] transition-all">
+        Yes, I Want This Transformation
+      </button>
+    </div>
+
   </div>
 </section>
 
-<section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 px-4 py-12">
-  <div
-    class="max-w-md mx-auto bg-black/30 border border-gray-700 rounded-xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-    <h2 class="text-xl font-bold text-yellow-400 mb-2">Who This Is For?</h2>
-    <div class="h-[2px] w-12 bg-yellow-400 mb-6"></div>
+<!-- ========== WHAT'S INSIDE SECTION (PDF BASED + CTA) ========== -->
+<section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 px-5 py-14">
+  <div class="max-w-xl mx-auto bg-black/30 border border-gray-700 rounded-xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
 
-    <ul class="space-y-3 text-sm text-gray-300 text-left">
-      <li class="flex items-start gap-2">
-        <div class="w-2.5 h-2.5 rounded-full bg-yellow-400 mt-[6px] animate-pulse"></div>
-        <span>I have a degree but lack practical skills</span>
+    <!-- Heading -->
+    <h2 class="text-xl font-bold text-yellow-400 mb-2">What's Inside</h2>
+    <div class="h-[2px] w-12 bg-yellow-400 mb-5"></div>
+
+    <ul class="space-y-4 text-sm text-gray-300">
+      <li class="flex gap-3 items-start">
+        <span class="text-green-400 text-lg">✔</span>
+        <p>Create content, campaigns & visuals using <span class="font-semibold">Generative AI</span></p>
       </li>
 
-      <li class="flex items-start gap-2">
-        <div class="w-2.5 h-2.5 rounded-full bg-yellow-400 mt-[6px] animate-pulse"></div>
-        <span>I want to switch to a digital marketing career</span>
+      <li class="flex gap-3 items-start">
+        <span class="text-green-400 text-lg">✔</span>
+        <p>Automate digital marketing & business workflows with <span class="font-semibold">AI tools</span></p>
       </li>
 
-      <li class="flex items-start gap-2">
-        <div class="w-2.5 h-2.5 rounded-full bg-yellow-400 mt-[6px] animate-pulse"></div>
-        <span>I want to grow my business or personal brand online</span>
+      <li class="flex gap-3 items-start">
+        <span class="text-green-400 text-lg">✔</span>
+        <p>Use <span class="font-semibold">real-world AI platforms</span> for smarter decision-making</p>
       </li>
 
-      <li class="flex items-start gap-2">
-        <div class="w-2.5 h-2.5 rounded-full bg-yellow-400 mt-[6px] animate-pulse"></div>
-        <span>I’ve done online courses but still can’t get results</span>
+      <li class="flex gap-3 items-start">
+        <span class="text-green-400 text-lg">✔</span>
+        <p>Understand how AI is shaping <span class="font-semibold">future-ready careers</span></p>
       </li>
     </ul>
+
+    <p class="mt-5 text-gray-300 italic text-[13px]">
+      This isn’t a conference — it’s an activation for your AI career.
+    </p>
+
+    <!-- CTA BUTTON -->
+    <div class="mt-6 text-center">
+      <button
+        (click)="navigateToRegisterPage()"
+        class="px-8 py-3 rounded-lg font-semibold text-black bg-gradient-to-r 
+        from-[#fbbf24] to-[#f59e0b] hover:from-[#facc15] hover:to-[#fbbf24]
+        shadow-[0_0_18px_rgba(250,204,21,0.25)] transition-all text-sm">
+        Join the Activation
+      </button>
+    </div>
+
   </div>
 </section>
 
 
-
-<section class="py-20 text-center bg-gradient-to-b 
-         from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-white px-4">
-
-  <!-- HEADING -->
-  <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight max-w-3xl mx-auto">
-    Are you ready to<br />
-    <span class="text-yellow-400">learn the skills that actually get results?</span>
-  </h2>
-
-  <!-- BUTTONS -->
-  <div class="flex flex-col items-center justify-center mt-10">
-
-    <!-- SINGLE PRIMARY BUTTON -->
-    <button (click)="navigateToRegisterPage()" class="px-8 py-3 rounded-xl font-semibold text-black text-sm sm:text-base
-             bg-gradient-to-r from-[#fbbf24] to-[#f59e0b]
-             hover:from-[#facc15] hover:to-[#fbbf24]
-             shadow-[0_0_18px_rgba(250,204,21,0.25)]
-             transition-all">
-      Hell yeah, I'm ready
-    </button>
-
-  </div>
-
-</section>
 <!-- ========== FAQ ========== -->
 <section class="py-10 px-4 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100">
   <div class="max-w-4xl mx-auto">
@@ -301,7 +379,6 @@
     © 2025 <span class="text-yellow-400 font-semibold">OctaLearn</span>. All rights reserved.
   </p>
 </footer>
-
 <!-- ========== STICKY FOOTER CTA (FLIP STYLE) ========== -->
 <section class="py-0 text-center sticky bottom-0 text-gray-100 z-50">
   <div

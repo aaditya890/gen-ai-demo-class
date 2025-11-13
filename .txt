@@ -1,78 +1,25 @@
-FAVICON 
-SCROLL SECTION TOOLS
-CERTIFICATE 
+<!-- ========== READY TO LEARN SECTION ========== -->
+<section class="py-20 text-center bg-gradient-to-b 
+         from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-white px-4">
 
-<!-- ========== WHAT YOU'LL LEARN / MODULES ========== -->
-<section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-100 px-4 py-10">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-xl font-bold text-yellow-400 text-center">Course Modules (Highlights)</h2>
+  <!-- HEADING -->
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight max-w-3xl mx-auto">
+    Are you ready to<br />
+    <span class="text-yellow-400">learn the skills that actually get results?</span>
+  </h2>
 
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div *ngFor="let m of modules" class="p-4 rounded-lg bg-black/30 border border-gray-700">
-        <h3 class="font-semibold text-white">{{ m.title }}</h3>
-        <p class="text-xs text-gray-300 mt-1">{{ m.points }}</p>
-      </div>
-    </div>
+  <!-- BUTTONS -->
+  <div class="flex flex-col items-center justify-center mt-10">
 
-    <!-- outcomes -->
-    <div class="mt-8 p-4 rounded-lg bg-black/30 border border-gray-700">
-      <h3 class="font-semibold text-white">Outcomes</h3>
-      <ul class="mt-2 text-sm text-gray-300 list-disc list-inside space-y-1">
-        <li>Set up campaigns across Google & Meta with proper tracking.</li>
-        <li>SEO basics to rank local pages; content & on-page workflow.</li>
-        <li>Build a simple landing page & connect analytics.</li>
-        <li>Create a personal portfolio / client-ready case study.</li>
-      </ul>
-    </div>
+    <!-- SINGLE PRIMARY BUTTON -->
+    <button (click)="navigateToRegisterPage()" class="px-8 py-3 rounded-xl font-semibold text-black text-sm sm:text-base
+             bg-gradient-to-r from-[#fbbf24] to-[#f59e0b]
+             hover:from-[#facc15] hover:to-[#fbbf24]
+             shadow-[0_0_18px_rgba(250,204,21,0.25)]
+             transition-all">
+      Hell yeah, I'm ready
+    </button>
+
   </div>
+
 </section>
-
-
-
-
-ffaq or footer 
-
-<!-- ========== FAQ ========== -->
-<section class="py-10  px-4 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-100">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-2xl font-extrabold text-center mb-8 text-yellow-400 tracking-wide">
-      Frequently Asked Questions
-    </h2>
-
-    <div class="space-y-3">
-      <div *ngFor="let faq of faqs" class="rounded border border-gray-700 bg-black/30">
-        <button (click)="toggleFaq(faq.id)"
-          class="w-full p-3 flex gap-2 justify-between items-center text-left">
-          <span class="font-semibold text-sm md:text-base text-white">
-            {{ faq.question }}
-          </span>
-          <span class="text-yellow-400 text-2xl font-bold">{{ faq.open ? '−' : '+' }}</span>
-        </button>
-
-        <div *ngIf="faq.open" class="text-sm px-3 pb-4 text-gray-300 -mt-1">
-          {{ faq.answer }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FOOTER ========== -->
-<footer class="pb-24 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#000] text-gray-300 pt-8 text-center border-t border-gray-800">
-  <!-- Logo -->
-  <div class="flex justify-center mb-3">
-    <img src="assets/LogoW.png" alt="OctaLearn Logo" class="h-8 opacity-90">
-  </div>
-
-  <!-- Copyright -->
-  <p class="text-xs text-gray-400 mb-4">
-    © 2025 <span class="text-yellow-400 font-semibold">OctaLearn Bilaspur</span>. All rights reserved.
-  </p>
-
-  <!-- Footer Links -->
-  <div class="flex flex-wrap justify-center gap-6 text-[13px] text-gray-400">
-    <a href="#" class="hover:text-yellow-400 transition">Terms & Conditions</a>
-    <a href="#" class="hover:text-yellow-400 transition">Privacy Policy</a>
-    <a href="#" class="hover:text-yellow-400 transition">Refund Policy</a>
-  </div>
-</footer>

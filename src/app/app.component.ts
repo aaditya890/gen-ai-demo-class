@@ -1,29 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
-import { ToolsSliderComponent } from "./tools-slider/tools-slider.component";
 
-
-interface BlogItem {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-}
-
-interface Testimonial {
-  id: number;
+interface ToolsIcons {
+  src: string;
   name: string;
-  role: string;
-  feedback: string;
-  image: string;
 }
-
-interface FAQ {
-  question: string;
-  answer: string;
-}
-
 
 interface ModuleItem {
   title: string;
@@ -39,43 +20,82 @@ interface FAQItem {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ToolsSliderComponent],
+  imports: [CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
   daysLeft = 0;
   hoursLeft = 0;
   minutesLeft = 0;
   secondsLeft = 0;
   seatsAvailable = 40;
-
-  // 🟡 Updated target date (22 Nov 2025)
-  private targetDate = new Date('2025-11-22T09:00:00'); 
-
+  private targetDate = new Date('2025-11-22T09:00:00');  // 🟡 Updated target date (22 Nov 2025)
   private timerId!: any;
 
-  // ===== Content =====
-  modules: ModuleItem[] = [
-    { title: 'Digital Marketing Foundations', points: 'Funnels, customer journey, positioning & offers.' },
-    { title: 'SEO Basics', points: 'Keyword research, on-page essentials, local SEO quick wins.' },
-    { title: 'Social Media Marketing', points: 'Instagram + Facebook content strategy & organic growth.' },
-    { title: 'Paid Ads (Meta + Google)', points: 'Ad structure, creatives, budgets & conversion setup.' },
-    { title: 'Analytics & Tracking', points: 'GA4, pixels/tags, UTM, reading reports & iterating.' },
-    { title: 'Landing Page & Copy', points: 'Simple page setup, hooks, CTAs, persuasion basics.' },
-    { title: 'Tools & Automation', points: 'Schedulers, forms, WhatsApp flows, simple CRMs.' },
-    { title: 'Portfolio & Case Study', points: 'Document a campaign, build mini-portfolio to pitch.' }
-  ];
+ faqs: FAQItem[] = [
+  {
+    id: 1,
+    question: 'What exactly is AI Day?',
+    answer:
+      'AI Day is a one-day, high-impact learning experience by OctaLearn focused on Automation Magic & Generative AI. You’ll discover how to make AI work for you — automating tasks, creating content, and building smarter workflows.',
+    open: false
+  },
+  {
+    id: 2,
+    question: 'Will I get a certificate?',
+    answer:
+      'Yes! Every participant receives an Official Certificate of Attendance, recognizing your completion of AI Day 2025 and your new AI skills.',
+    open: false
+  },
+  {
+    id: 3,
+    question: 'Do I get any free tools or resources?',
+    answer:
+      'Absolutely! You’ll get exclusive access to free AI tools, templates, and prompt kits designed to help you start automating immediately — even after the event.',
+    open: false
+  },
+  {
+    id: 4,
+    question: 'Do I need any prior experience in AI or coding?',
+    answer:
+      'Not at all. AI Day is designed for beginners to intermediates. Whether you’re a student, creator, or business professional — you’ll learn step-by-step through guided, practical sessions.',
+    open: false
+  },
+  {
+    id: 5,
+    question: 'What will I actually learn?',
+    answer:
+      'You’ll master Automation Magic, Generative AI Skills, Prompt Engineering, and build your first mini AI-powered automation project before the day ends!',
+    open: false
+  },
+  {
+    id: 6,
+    question: 'Who should attend?',
+    answer:
+      'Anyone ready to learn how to use AI to work smarter, not harder! Perfect for students, entrepreneurs, engineers, marketers, and ambitious professionals who want to join the top 1% of AI-ready talent.',
+    open: false
+  },
+  {
+    id: 7,
+    question: 'How do I register?',
+    answer:
+      'Simply visit octalearn.in or click on Register Now to reserve your seat. Limited spots available — and they fill up fast!',
+    open: false
+  }
+];
 
-  faqs: FAQItem[] = [
-    { id: 1, question: 'Who is this for?', answer: 'Students, business owners, and beginners who want practical digital marketing skills.', open: false },
-    { id: 2, question: 'Is it online or offline?', answer: 'The listed session is online. For offline batches at Bilaspur campus, contact the number given.', open: false },
-    { id: 3, question: 'Do I need prior experience?', answer: 'No. Basic computer & internet skills are enough; we start from fundamentals.', open: false },
-    { id: 4, question: 'Will I get recordings?', answer: 'Yes, sessions are recorded and shared with registered participants.', open: false },
-    { id: 5, question: 'Do you provide certificate?', answer: 'Yes, a certificate of completion is provided after finishing the workshop.', open: false },
-    { id: 6, question: 'How do I practice?', answer: 'You’ll get guided tasks and mini-projects to implement along with the trainer.', open: false },
-    { id: 7, question: 'What tools are used?', answer: 'Google/Meta Ads, GA4, Meta Business Suite, basic page builders and tracking tools.', open: false },
-    { id: 8, question: 'Where is the institute?', answer: 'FF-03, G.S. Plaza, Telipara, Bilaspur, Chhattisgarh 495001. Phone: +91 96444 96960.', open: false }
+
+  icons: ToolsIcons[] = [
+    { src: 'assets/ai/openai.png', name: 'Sora' },
+    { src: 'assets/ai/grok.png', name: 'Grok' },
+    { src: 'assets/ai/gemini-color.svg', name: 'Gemini' },
+    { src: 'assets/ai/midjourney.png', name: 'Midjourney' },
+    { src: 'assets/ai/perplexity-color.svg', name: 'Perplexity' },
+    { src: 'assets/ai/n8n-color.svg', name: 'n8n' },
+    { src: 'assets/ai/notion.png', name: 'Notion' },
+    { src: 'assets/ai/deepseek-color.svg', name: 'DeepSeek' },
   ];
 
   ngOnInit(): void {
@@ -87,8 +107,8 @@ export class AppComponent {
   ngOnDestroy(): void {
     if (this.timerId) clearInterval(this.timerId);
   }
-  
- private tick(): void {
+
+  private tick(): void {
     const now = new Date().getTime();
     let diff = this.targetDate.getTime() - now;
 
@@ -114,25 +134,33 @@ export class AppComponent {
 
     this.secondsLeft = Math.floor(diff / second);
   }
+private updateSeats(): void {
 
- private updateSeats(): void {
-  const startDate = new Date('2025-11-10T00:00:00');
+  // START COUNTDOWN FROM TODAY (Always fresh)
+  const startDate = new Date();  
+  startDate.setHours(0, 0, 0, 0); // midnight of today
+
   const now = new Date();
 
-  // Calculate total hours passed since start date
+  // Difference in hours
   const diffInMs = now.getTime() - startDate.getTime();
   const hoursPassed = Math.floor(diffInMs / (1000 * 60 * 60));
 
-  // Each 12 hours → minus 3 seats
-  const cycles = Math.floor(hoursPassed / 12); 
+  // Every 12 hours → reduce 3 seats
+  const cycles = Math.floor(hoursPassed / 12);
 
-  this.seatsAvailable = Math.max(40 - (cycles * 3), 0);
+  // Initial seats
+  const startingSeats = 40;
+
+  this.seatsAvailable = Math.max(startingSeats - (cycles * 3), 0);
 }
+
 
 
   navigateToRegisterPage(): void {
     window.location.href = 'https://forms.gle/ZmTCG49KAFLBuBx17';
   }
+
   toggleFaq(id: number): void {
     this.faqs = this.faqs.map(f => ({ ...f, open: f.id === id ? !f.open : false }));
   }

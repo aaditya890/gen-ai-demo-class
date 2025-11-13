@@ -2,15 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-font-family: "Montserrat", sans-serif;}
+body,
+html {
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+}
 
-/* 🌌 Refined AI Gradient (Brighter mid-tone + readable contrast) */
 @layer base {
   :root {
-    --ai-gradient-start: #06070a; /* near black */
-    --ai-gradient-mid: #15235a;   /* brightened blue-violet tone */
-    --ai-gradient-end: #2b1670;   /* deep violet edge */
+    --ai-gradient-start: #06070a;
+    /* near black */
+    --ai-gradient-mid: #15235a;
+    /* brightened blue-violet tone */
+    --ai-gradient-end: #2b1670;
+    /* deep violet edge */
     --text-content: #ffffff;
     --highlight-yellow: #ffd300;
     --highlight-blue: #007bff;
@@ -19,12 +24,10 @@ font-family: "Montserrat", sans-serif;}
 
 @layer utilities {
   .bg-ai-gradient {
-    background: linear-gradient(
-      145deg,
-      var(--ai-gradient-start) 0%,
-      var(--ai-gradient-mid) 45%,
-      var(--ai-gradient-end) 100%
-    );
+    background: linear-gradient(145deg,
+        var(--ai-gradient-start) 0%,
+        var(--ai-gradient-mid) 45%,
+        var(--ai-gradient-end) 100%);
   }
 
   .text-highlight-yellow {
@@ -37,6 +40,7 @@ font-family: "Montserrat", sans-serif;}
 
   .text-content {
     color: var(--text-content);
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2); /* glow for readability */
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+    /* glow for readability */
   }
 }

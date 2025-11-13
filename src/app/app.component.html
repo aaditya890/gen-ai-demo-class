@@ -32,7 +32,7 @@
 
       <!-- 🧑‍🏫 Left Photo -->
       <div class="w-56 h-56 sm:w-52 sm:h-56 rounded-md overflow-hidden">
-        <img src="assets/nw.webp" alt="Aaditya Mishra" class="w-full h-full object-cover object-center" />
+        <img src="assets/nw2.png" alt="Aaditya Mishra" class="w-full h-full object-cover object-center" />
       </div>
 
       <!-- 🟡 Right Info -->
@@ -41,17 +41,18 @@
           <span class="font-medium text-white">Hi, I am</span>
         </p>
 
-        <h3
-          class="text-[#ffed4a] text-[22px] mt-1 sm:text-[24px] font-extrabold leading-tight">
-         Tausif Razaa
+        <h3 class="text-[#ffed4a] text-[22px] mt-1 sm:text-[24px] font-extrabold leading-tight">
+          Tausif Razaa
         </h3>
 
         <p class="text-gray-200 text-[13px] leading-1 sm:text-[14px] font-medium mt-2">
-         Founder , OctaLearn
+          Founder , OctaLearn
         </p>
 
         <p class="text-gray-400 text-[13px] sm:text-[14px] leading-tight max-w-[280px] sm:max-w-[320px] mt-2">
-         After <span class="text-[#ffed4a] font-semibold">8+ years</span> in e-commerce and brand building, I saw the gap between degrees and real-world skills. OctaLearn is my way of bridging that — with hands-on, industry-driven learning that truly prepares you for today’s market.
+          After <span class="text-[#ffed4a] font-semibold">8+ years</span> in e-commerce and brand building, I saw the
+          gap between degrees and real-world skills. OctaLearn is my way of bridging that — with hands-on,
+          industry-driven learning that truly prepares you for today’s market.
         </p>
       </div>
     </div>
@@ -60,13 +61,16 @@
       <div class="flex items-center justify-center gap-3">
         <span class="text-yellow-400 text-xl">★★★★☆</span>
         <p class="text-xs text-gray-200 font-medium text-justify">
-          <span class="text-[#ffed4a] font-semibold">1000+</span> students & professionals <br> have rated our module with 4.7 <br> ratings
+          <span class="text-[#ffed4a] font-semibold">1000+</span> students & professionals <br> have rated our module
+          with 4.7 <br> ratings
           My Programs with 4.9★
         </p>
       </div>
     </div>
   </div>
 </section>
+
+<app-tools-slider></app-tools-slider>
 <!-- ========== REGISTER / COUNTDOWN SECTION ========== -->
 <section
   class="flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] py-8 px-4 text-gray-100">
@@ -80,8 +84,7 @@
   </p>
 
   <!-- glowing register btn -->
-  <button
-    (click)="navigateToRegisterPage()"
+  <button (click)="navigateToRegisterPage()"
     class="bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] hover:from-[#fbbf24] hover:to-[#facc15] text-black font-extrabold text-[14px] px-6 py-3 rounded-md shadow-[0_0_25px_rgba(250,204,21,0.4)] transition-all">
     REGISTER NOW
   </button>
@@ -118,7 +121,8 @@
 
   <!-- bonus -->
   <p class="mt-4 text-xs text-gray-300 max-w-xs">
-    Join OctaLearn Bilaspur for high-impact training with agency-style practice, live tools & guided projects. Unlock bonuses worth <span class="text-yellow-400 font-semibold">₹6,487</span>.
+    Join OctaLearn Bilaspur for high-impact training with agency-style practice, live tools & guided projects. Unlock
+    bonuses worth <span class="text-yellow-400 font-semibold">₹6,487</span>.
   </p>
 </section>
 <!-- ========== WHAT WILL CHANGE IN YOU ========== -->
@@ -129,7 +133,7 @@
     <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">
       What Will Change In You?
     </h2>
-    
+
     <!-- Cards Container -->
     <div class="space-y-5">
       <!-- Card 1 -->
@@ -180,7 +184,8 @@
 </section>
 
 <section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100 px-4 py-12">
-  <div class="max-w-md mx-auto bg-black/30 border border-gray-700 rounded-xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+  <div
+    class="max-w-md mx-auto bg-black/30 border border-gray-700 rounded-xl p-6 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
     <h2 class="text-xl font-bold text-yellow-400 mb-2">Who This Is For?</h2>
     <div class="h-[2px] w-12 bg-yellow-400 mb-6"></div>
 
@@ -207,7 +212,34 @@
     </ul>
   </div>
 </section>
- <!-- ========== FAQ ========== -->
+
+
+
+<section class="py-20 text-center bg-gradient-to-b 
+         from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-white px-4">
+
+  <!-- HEADING -->
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight max-w-3xl mx-auto">
+    Are you ready to<br />
+    <span class="text-yellow-400">learn the skills that actually get results?</span>
+  </h2>
+
+  <!-- BUTTONS -->
+  <div class="flex flex-col items-center justify-center mt-10">
+
+    <!-- SINGLE PRIMARY BUTTON -->
+    <button (click)="navigateToRegisterPage()" class="px-8 py-3 rounded-xl font-semibold text-black text-sm sm:text-base
+             bg-gradient-to-r from-[#fbbf24] to-[#f59e0b]
+             hover:from-[#facc15] hover:to-[#fbbf24]
+             shadow-[0_0_18px_rgba(250,204,21,0.25)]
+             transition-all">
+      Hell yeah, I'm ready
+    </button>
+
+  </div>
+
+</section>
+<!-- ========== FAQ ========== -->
 <section class="py-10 px-4 bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] text-gray-100">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl font-extrabold text-center mb-8 text-yellow-400 tracking-wide">
@@ -216,8 +248,7 @@
 
     <div class="space-y-3">
       <div *ngFor="let faq of faqs" class="rounded border border-gray-700 bg-black/30">
-        <button (click)="toggleFaq(faq.id)"
-          class="w-full p-3 flex gap-2 justify-between items-center text-left">
+        <button (click)="toggleFaq(faq.id)" class="w-full p-3 flex gap-2 justify-between items-center text-left">
           <span class="font-semibold text-sm md:text-base text-white">
             {{ faq.question }}
           </span>
@@ -233,14 +264,11 @@
 </section>
 <!-- ========== CLEAN COMPACT MAP SECTION ========== -->
 <section class="bg-gradient-to-b from-[#0b0c23] via-[#11124a] to-[#0b0c23] px-4 py-10 flex justify-center">
-  <div class="max-w-3xl w-full rounded-2xl overflow-hidden border border-[#242652] shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-    <iframe
-      class="w-full h-[160px] sm:h-[180px] rounded-2xl"
+  <div
+    class="max-w-3xl w-full rounded-2xl overflow-hidden border border-[#242652] shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+    <iframe class="w-full h-[160px] sm:h-[180px] rounded-2xl"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.3573700723427!2d82.15573217490811!3d22.074164979849805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x29604345eeef12a1%3A0xc0795cbd46fa5a3c!2sOctaLearn!5e0!3m2!1sen!2sin!4v1762949347335!5m2!1sen!2sin"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 </section>
@@ -264,7 +292,7 @@
       Outcomes may vary based on individual effort, consistency, and market conditions.
       All logos, trademarks, and brand names used in training materials belong to their respective owners
       and are used for educational purposes only.
-    
+
     </p>
   </div>
 
@@ -316,8 +344,7 @@
     </div>
 
     <!-- Enroll Button -->
-    <button
-      (click)="navigateToRegisterPage()"
+    <button (click)="navigateToRegisterPage()"
       class="bg-[#FACC15] text-black font-extrabold text-[13px] px-4 py-2 rounded-lg active:translate-y-[1px] transition">
       ENROLL NOW
     </button>

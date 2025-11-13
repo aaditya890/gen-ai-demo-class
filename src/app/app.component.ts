@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
+import { ToolsSliderComponent } from "./tools-slider/tools-slider.component";
 
 
 interface BlogItem {
@@ -38,7 +39,7 @@ interface FAQItem {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ToolsSliderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -47,7 +48,7 @@ export class AppComponent {
   hoursLeft = 0;
   minutesLeft = 0;
   secondsLeft = 0;
-  seatsAvailable = 21;
+  seatsAvailable = 40;
 
   // 🟡 Updated target date (22 Nov 2025)
   private targetDate = new Date('2025-11-22T09:00:00'); 
@@ -86,6 +87,7 @@ export class AppComponent {
   ngOnDestroy(): void {
     if (this.timerId) clearInterval(this.timerId);
   }
+  
  private tick(): void {
     const now = new Date().getTime();
     let diff = this.targetDate.getTime() - now;
@@ -113,16 +115,20 @@ export class AppComponent {
     this.secondsLeft = Math.floor(diff / second);
   }
 
-  private updateSeats(): void {
-    const startDate = new Date('2025-11-10T00:00:00');
-    const today = new Date();
+ private updateSeats(): void {
+  const startDate = new Date('2025-11-10T00:00:00');
+  const now = new Date();
 
-    const start = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()).getTime();
-    const curr = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
-    const daysPassed = Math.max(Math.floor((curr - start) / (1000 * 60 * 60 * 24)), 0);
+  // Calculate total hours passed since start date
+  const diffInMs = now.getTime() - startDate.getTime();
+  const hoursPassed = Math.floor(diffInMs / (1000 * 60 * 60));
 
-    this.seatsAvailable = Math.max(21 - daysPassed * 3, 0);
-  }
+  // Each 12 hours → minus 3 seats
+  const cycles = Math.floor(hoursPassed / 12); 
+
+  this.seatsAvailable = Math.max(40 - (cycles * 3), 0);
+}
+
 
   navigateToRegisterPage(): void {
     window.location.href = 'https://forms.gle/ZmTCG49KAFLBuBx17';

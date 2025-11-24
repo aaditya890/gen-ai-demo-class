@@ -26,6 +26,9 @@ interface FAQItem {
 })
 
 export class AppComponent {
+  productDetailInformation:any[] = [
+    
+  ]
   daysLeft = 0;
   hoursLeft = 0;
   minutesLeft = 0;

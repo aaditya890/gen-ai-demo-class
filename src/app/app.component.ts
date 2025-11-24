@@ -26,68 +26,68 @@ interface FAQItem {
 })
 
 export class AppComponent {
-  productDetailInformation:any[] = [
-    
+  productDetailInformation: any[] = [
+
   ]
   daysLeft = 0;
   hoursLeft = 0;
   minutesLeft = 0;
   secondsLeft = 0;
   seatsAvailable = 11;
-  private targetDate = new Date('2025-11-27T09:00:00');
+  private targetDate = new Date('2025-11-26T09:00:00');
   private timerId!: any;
 
- faqs: FAQItem[] = [
-  {
-    id: 1,
-    question: 'What exactly is AI Day?',
-    answer:
-      'AI Day is a one-day, high-impact learning experience by OctaLearn focused on Automation Magic & Generative AI. You’ll discover how to make AI work for you — automating tasks, creating content, and building smarter workflows.',
-    open: false
-  },
-  {
-    id: 2,
-    question: 'Will I get a certificate?',
-    answer:
-      'Yes! Every participant receives an Official Certificate of Attendance, recognizing your completion of AI Day 2025 and your new AI skills.',
-    open: false
-  },
-  {
-    id: 3,
-    question: 'Do I get any free tools or resources?',
-    answer:
-      'Absolutely! You’ll get exclusive access to free AI tools, templates, and prompt kits designed to help you start automating immediately — even after the event.',
-    open: false
-  },
-  {
-    id: 4,
-    question: 'Do I need any prior experience in AI or coding?',
-    answer:
-      'Not at all. AI Day is designed for beginners to intermediates. Whether you’re a student, creator, or business professional — you’ll learn step-by-step through guided, practical sessions.',
-    open: false
-  },
-  {
-    id: 5,
-    question: 'What will I actually learn?',
-    answer:
-      'You’ll master Automation Magic, Generative AI Skills, Prompt Engineering, and build your first mini AI-powered automation project before the day ends!',
-    open: false
-  },
-  {
-    id: 6,
-    question: 'Who should attend?',
-    answer:
-      'Anyone ready to learn how to use AI to work smarter, not harder! Perfect for students, entrepreneurs, engineers, marketers, and ambitious professionals who want to join the top 1% of AI-ready talent.',
-    open: false
-  },
-  {
-    id: 7,
-    question: 'How do I register?',
-    answer:
-      'Simply visit octalearn.in or click on Register Now to reserve your seat. Limited spots available — and they fill up fast!',
-    open: false
-  }
-];
+  faqs: FAQItem[] = [
+    {
+      id: 1,
+      question: 'What exactly is AI Day?',
+      answer:
+        'AI Day is a one-day, high-impact learning experience by OctaLearn focused on Automation Magic & Generative AI. You’ll discover how to make AI work for you — automating tasks, creating content, and building smarter workflows.',
+      open: false
+    },
+    {
+      id: 2,
+      question: 'Will I get a certificate?',
+      answer:
+        'Yes! Every participant receives an Official Certificate of Attendance, recognizing your completion of AI Day 2025 and your new AI skills.',
+      open: false
+    },
+    {
+      id: 3,
+      question: 'Do I get any free tools or resources?',
+      answer:
+        'Absolutely! You’ll get exclusive access to free AI tools, templates, and prompt kits designed to help you start automating immediately — even after the event.',
+      open: false
+    },
+    {
+      id: 4,
+      question: 'Do I need any prior experience in AI or coding?',
+      answer:
+        'Not at all. AI Day is designed for beginners to intermediates. Whether you’re a student, creator, or business professional — you’ll learn step-by-step through guided, practical sessions.',
+      open: false
+    },
+    {
+      id: 5,
+      question: 'What will I actually learn?',
+      answer:
+        'You’ll master Automation Magic, Generative AI Skills, Prompt Engineering, and build your first mini AI-powered automation project before the day ends!',
+      open: false
+    },
+    {
+      id: 6,
+      question: 'Who should attend?',
+      answer:
+        'Anyone ready to learn how to use AI to work smarter, not harder! Perfect for students, entrepreneurs, engineers, marketers, and ambitious professionals who want to join the top 1% of AI-ready talent.',
+      open: false
+    },
+    {
+      id: 7,
+      question: 'How do I register?',
+      answer:
+        'Simply visit octalearn.in or click on Register Now to reserve your seat. Limited spots available — and they fill up fast!',
+      open: false
+    }
+  ];
 
 
   icons: ToolsIcons[] = [
@@ -137,22 +137,21 @@ export class AppComponent {
 
     this.secondsLeft = Math.floor(diff / second);
   }
-private updateSeats(): void {
-  const startingSeats = 11;   // seats today
-  const seatsPerDay = 4;      // reduce 4 seats per day
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  private updateSeats(): void {
+    const startingSeats = 11;
+    const seatsPerDay = 4;
 
-  const now = new Date();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-  // Days passed since today
-  const diffInMs = now.getTime() - today.getTime();
-  const daysPassed = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+    const now = new Date();
+    const diffInMs = now.getTime() - today.getTime();
+    const daysPassed = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
-  // Final seat calculation
-  this.seatsAvailable = Math.max(startingSeats - (daysPassed * seatsPerDay), 0);
-}
+    this.seatsAvailable = Math.max(startingSeats - (daysPassed * seatsPerDay), 0);
+  }
+
 
 
 

@@ -33,8 +33,8 @@ export class AppComponent {
   hoursLeft = 0;
   minutesLeft = 0;
   secondsLeft = 0;
-  seatsAvailable = 40;
-  private targetDate = new Date('2025-11-22T09:00:00');  // 🟡 Updated target date (22 Nov 2025)
+  seatsAvailable = 11;
+  private targetDate = new Date('2025-11-27T09:00:00');
   private timerId!: any;
 
  faqs: FAQItem[] = [
@@ -138,25 +138,22 @@ export class AppComponent {
     this.secondsLeft = Math.floor(diff / second);
   }
 private updateSeats(): void {
+  const startingSeats = 11;   // seats today
+  const seatsPerDay = 4;      // reduce 4 seats per day
 
-  // START COUNTDOWN FROM TODAY (Always fresh)
-  const startDate = new Date();  
-  startDate.setHours(0, 0, 0, 0); // midnight of today
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
   const now = new Date();
 
-  // Difference in hours
-  const diffInMs = now.getTime() - startDate.getTime();
-  const hoursPassed = Math.floor(diffInMs / (1000 * 60 * 60));
+  // Days passed since today
+  const diffInMs = now.getTime() - today.getTime();
+  const daysPassed = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
-  // Every 12 hours → reduce 3 seats
-  const cycles = Math.floor(hoursPassed / 12);
-
-  // Initial seats
-  const startingSeats = 40;
-
-  this.seatsAvailable = Math.max(startingSeats - (cycles * 3), 0);
+  // Final seat calculation
+  this.seatsAvailable = Math.max(startingSeats - (daysPassed * seatsPerDay), 0);
 }
+
 
 
 
